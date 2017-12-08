@@ -1,6 +1,8 @@
 # ha-inkwavemap
 ![墨澜地图](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/screenshot.jpg)
 
+![iOS](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/ios.jpg)
+
 本项目为 Home Assistant 的定制化中国地图面板。
 
 制作者：[墨澜](https://github.com/cxlwill)， [Mr.Yin](https://github.com/YinHangCode)
