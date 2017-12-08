@@ -1,0 +1,5 @@
+panel_custom:
+  - name: inkwavemap
+    sidebar_title: '墨澜地图'
+    sidebar_icon: mdi:map
+    url_path: inkwavemap

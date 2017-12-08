@@ -1,0 +1,6 @@
+function MapBaidu() {
+}
+
+MapBaidu.prototype = {
+    
+}

@@ -1,0 +1,21 @@
+html,
+body,
+.mapContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-size: 14px;
+}
+
+.datagrid-row-selected {
+    background: #00bbee;
+    color: #fff;
+}
+
+.amap-logo {
+    display: none!important;
+}
+
+.amap-copyright {
+    display: none!important;
+}

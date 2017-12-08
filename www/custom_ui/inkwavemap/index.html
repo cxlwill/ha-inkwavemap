@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>ha-inkwavemap</title>
+    
+    <script src="config.js"></script>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/utils.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    
+    <script src="js/dock.js"></script>
+    <link rel="stylesheet" href='css/dock.css'/>
+    
+    <script src="js/map.js"></script>
+    <link rel="stylesheet" href='css/map.css'/>
+    <script src="js/coordinateutil.js"></script>
+
+    <script type="text/javascript">
+        var gaodeMapAPI = "<script src='https://webapi.amap.com/maps?v=1.4.1&key=" + GaodeMapKey + "&plugin=AMap.MarkerClusterer,AMap.Driving'><\/script>";
+    //    console.info(gaodeMapAPI);
+        document.write(gaodeMapAPI);
+    </script>
+    <script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+    
+    <script src="js/mapgaode.js"></script>
+    <script src="js/mapbaidu.js"></script>
+    
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <script src="index.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <div id="mapContainer" class="mapContainer">
+        <div id="deviceListWin" class="easyui-window" title="Device List" 
+            style="width:300px;height:400px;left:10px;top:10px"
+            data-options="iconCls:'icon-man',modal:false,minimizable:false,maximizable:false,closed:true">
+            <table id="deviceListGrid" class="easyui-datagrid" style="width:100%;height:100%"
+            data-options="selectOnCheck:false,checkOnSelect:false,rownumbers:false,singleSelect:true">
+                <thead>
+                    <tr>
+                        <th data-options="field:'ck',checkbox:true,width:10"></th>
+                        <th data-options="field:'id',width:90,hidden:true">ID</th>
+                        <th data-options="field:'name',width:120">Name</th>
+                        <th data-options="field:'lon',width:30,hidden:true">lon</th>
+                        <th data-options="field:'lat',width:30,hidden:true">lat</th>
+                        <th data-options="field:'state',width:120">State</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div id="dock">
+        <img id="toolbar_zoomin" src="images/toolbar_zoomin_disable.png" width="32">
+        <img id="toolbar_zoomout" src="images/toolbar_zoomout_disable.png" width="32">
+        <img id="toolbar_traffic" src="images/toolbar_traffic_disable.png" width="32">
+        <img id="toolbar_homepoint" src="images/toolbar_homepoint_disable.png" width="32">
+        <img id="toolbar_homerange" src="images/toolbar_homerange_disable.png" width="32">
+        <img id="toolbar_devicelist" src="images/toolbar_devicelist_disable.png" width="32">
+    </div>
+</body>
+
+</html>
