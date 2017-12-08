@@ -22,7 +22,8 @@
 ## 配置方法
 1. 拷贝 `www` 和 `panels` 文件夹至 Home Assistant 配置文件夹；
 2. 打开 Home Assistant 配置文件 `configuration.yaml`，添加 `sample.yaml` 中的内容；
-3. 前往 [高德开放平台](http://lbs.amap.com/) 申请开发者身份并获取 token；
+3. 前往 [高德开放平台](http://lbs.amap.com/) 申请开发者身份，创建新应用，服务类型 选择 web 端，之后获取 key；
+	![Gaode](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/gaode.jpg)
 4. 打开 `www/custom_ui/inkwavemap` 中 `config.js` 文件，填入你的 HA 密码以及高德 token。
 5. **清除浏览器缓存，重启 HA。**
 
