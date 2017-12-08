@@ -1,4 +1,5 @@
 # ha-inkwavemap
+![墨澜地图](media/screenshot.jpg)
 
 本项目为 Home Assistant 的定制化中国地图面板。
 
