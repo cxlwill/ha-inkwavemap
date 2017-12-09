@@ -72,8 +72,10 @@ MapGaode.prototype = {
                     info.push("<div style=\"width:200px;padding:0px 0px 0px 0px;\"><b>Stay Home List</b>");
                     info.push("<hr>");
                     for(var deviceId in that.devicesLayer) {
-                        if(that.homerangeLayer.contains(that.devicesLayer[deviceId].getPosition())) {
-                            info.push("<li>" + that.devicesLayer[deviceId].getContent().innerText + "</li>");
+                        if(that.devicesLayer[deviceId].visible) {
+                            if(that.homerangeLayer.contains(that.devicesLayer[deviceId].getPosition())) {
+                                info.push("<li>" + that.devicesLayer[deviceId].getContent().innerText + "</li>");
+                            }
                         }
                     }
                     info.push("</div></div>");

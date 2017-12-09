@@ -1,4 +1,6 @@
 # ha-inkwavemap
+[![ha-inkwavemap version](https://img.shields.io/badge/ha--inkwavemap-0.0.2-blue.svg)](https://github.com/cxlwill/ha-inkwavemap)
+   
 ![墨澜地图](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/screenshot.jpg)
 
 ![iOS](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/ios.jpg)
@@ -23,7 +25,7 @@
 1. 拷贝 `www` 和 `panels` 文件夹至 Home Assistant 配置文件夹；
 2. 打开 Home Assistant 配置文件 `configuration.yaml`，添加 `sample.yaml` 中的内容；
 3. 前往 [高德开放平台](http://lbs.amap.com/) 申请开发者身份，创建新应用，服务类型 选择 web 端，之后获取 key；
-	![Gaode](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/gaode.jpg)
+![Gaode](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/gaode.jpg)
 4. 打开 `www/custom_ui/inkwavemap` 中 `config.js` 文件，填入你的 HA 密码以及高德 token。
 5. **清除浏览器缓存，重启 HA。**
 
@@ -45,5 +47,19 @@
 - 添加百度地图图层及卫星图层
 - 同步 `zone` 信息，生成多个地理围栏
 
+## 常见问题
+**1. 打开地图空白或报错Failed to load resource: net::ERR_CONNECTION_REFUSED**   
+请检查config.js配置中HA的路径(即HomeAssistantWebAPIUrl项)是否正确，建议使用相对路径"./../../.."。   
+   
+**2. 地图中不显示设备信息**   
+请检查config.js配置中HA的访问密码(即HomeAssistantWebAPIPassword项)是否正确。   
+可通过访问HA提供的API地址"https://HA的地址:8123/api/states/device_tracker.设备的ID?password=HA的访问密码"，来查看是否可以通过HA获取到设备信息。
+
+## 版本更新日志
+### 0.0.2
+1.修复设备列表中未勾选的成员依旧在"在家成员列表框"中显示的bug。   
+2.优化代码逻辑，减少设备回家线路轨迹在地图上的刷新次数。   
+### 0.0.1
+1.增加对高德地图的支持：家标签及区域范围，交通态势，设备坐标，设备回家线路及预算时间，设备点聚合，在家成员列表框。   
 
 

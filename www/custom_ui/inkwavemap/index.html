@@ -6,24 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=8">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache, must-revalidate">
     <meta http-equiv="Cache" content="no-cache">
     <title>ha-inkwavemap</title>
     
-    <script src="config.js"></script>
     <script src="js/jquery-1.12.4.min.js"></script>
-    <script src="js/utils.js"></script>
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
-    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     
-    <script src="js/dock.js"></script>
+    <script src="config.js?"+Math.random()></script>
+    <script src="js/utils.js?"+Math.random()></script>
+    
+    <script src="js/dock.js?"+Math.random()></script>
     <link rel="stylesheet" href='css/dock.css'/>
     
-    <script src="js/map.js"></script>
+    <script src="js/map.js?"+Math.random()></script>
     <link rel="stylesheet" href='css/map.css'/>
-    <script src="js/coordinateutil.js"></script>
+    <script src="js/coordinateutil.js?"+Math.random()></script>
 
     <script type="text/javascript">
         var gaodeMapAPI = "<script src='https://webapi.amap.com/maps?v=1.4.1&key=" + GaodeMapKey + "&plugin=AMap.MarkerClusterer,AMap.Driving'><\/script>";
@@ -32,8 +33,8 @@
     </script>
     <script src="https://webapi.amap.com/ui/1.0/main.js"></script>
     
-    <script src="js/mapgaode.js"></script>
-    <script src="js/mapbaidu.js"></script>
+    <script src="js/mapgaode.js?"+Math.random()></script>
+    <script src="js/mapbaidu.js?"+Math.random()></script>
     
     <style type="text/css">
     </style>

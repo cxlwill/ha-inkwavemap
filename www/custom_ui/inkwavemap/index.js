@@ -111,14 +111,16 @@ function getDevice(deviceId) {
                 if(null == deviceName) {
                     deviceName = deviceId;
                 }
-                updateDeviceList(deviceId, {'name': deviceName, 'state': '---'});
+                updateDeviceList(deviceId, {'name': deviceName});
                 
                 var longitude = data.attributes.longitude;
                 var latitude = data.attributes.latitude;
                 if(null != longitude && null != latitude) {
-                    updateDeviceList(deviceId, {'lon': longitude, 'lat': latitude});
-                    map.drawdevicemarker(deviceId, deviceName, {'lon': longitude, 'lat': latitude});
-                    map.drawdrivingmarker(deviceId, homePoint);
+                    if(longitude != getDeviceListValue(deviceId, 'lon') && latitude != getDeviceListValue(deviceId, 'lat')) {
+                        updateDeviceList(deviceId, {'lon': longitude, 'lat': latitude, 'state': '---'});
+                        map.drawdevicemarker(deviceId, deviceName, {'lon': longitude, 'lat': latitude});
+                        map.drawdrivingmarker(deviceId, homePoint);
+                    }
                 }
             }
         });
@@ -175,6 +177,20 @@ function syncToolbarState(ids) {
             $("#toolbar_" + id).attr("src", "images/toolbar_" + id + "_enable.png");
         } else {
             $("#toolbar_" + id).attr("src", "images/toolbar_" + id + "_disable.png");
+        }
+    }
+}
+
+function getDeviceListValue(deviceId, colName) {
+    var datas = $("#deviceListGrid").datagrid('getRows');
+    for(var index in datas) {
+        var data = datas[index];
+        if(data.id == deviceId) {
+            for(var col in data) {
+                if(col == colName) {
+                    return data[col];
+                }
+            }
         }
     }
 }
