@@ -1,6 +1,11 @@
 HomeAssistantWebAPIUrl="./../../.."
-//建议保持上面的配置，无须更改
+// HomeAssistant访问地址
+// 支持相对路径(如:"./../../..")和绝对路径(如:"http://www.xxx.com:8123")
+// !!! 注：非高级玩家请使用默认的相对路径，即"./../../.." !!!
+
 HomeAssistantWebAPIPassword=""
-//你的 HA 密码
+// HomeAssistant访问密码
+
 GaodeMapKey=""
-//你的高德token，请至高德开放平台获取
+// 高德API key
+// 请至高德开放平台http://lbs.amap.com/获取
