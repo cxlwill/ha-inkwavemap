@@ -53,7 +53,7 @@
    
 **2. 地图中不显示设备信息**   
 请检查config.js配置中HA的访问密码(即HomeAssistantWebAPIPassword项)是否正确。   
-可通过访问HA提供的API地址`https://HA的地址:8123/api/states/device_tracker.设备的ID?password=HA的访问密码`，来查看是否可以通过HA获取到设备信息。
+可通过访问HA提供的API地址`https://HA的地址:8123/api/states/device_tracker.设备的ID?api_password=HA的访问密码`，来查看是否可以通过HA获取到设备信息。
 
 ## 版本更新日志
 ### 0.0.2
