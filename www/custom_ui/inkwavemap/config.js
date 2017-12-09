@@ -1,5 +1,5 @@
 HomeAssistantWebAPIUrl="./../../.."
-//你的 HA 地址，例如 "http://127.0.0.1:8123"
+//建议保持上面的配置，无须更改
 HomeAssistantWebAPIPassword=""
 //你的 HA 密码
 GaodeMapKey=""
