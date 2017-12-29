@@ -24,7 +24,7 @@
 ## 配置方法
 1. 拷贝 `www` 和 `panels` 文件夹至 Home Assistant 配置文件夹；
 2. 打开 Home Assistant 配置文件 `configuration.yaml`，添加 `sample.yaml` 中的内容；
-3. 前往 [高德开放平台](http://lbs.amap.com/) 申请开发者身份，创建新应用，服务类型 选择 web 端，之后获取 key；
+3. 前往 [高德开放平台](http://lbs.amap.com/) 申请开发者身份，创建新应用，**服务类型选择 web 端，注意是 web 端，不是 web 服务！！！**之后获取 key；
 ![Gaode](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/gaode.jpg)
 4. 打开 `www/custom_ui/inkwavemap` 中 `config.js` 文件，填入你的 HA 密码以及高德 token。
 5. **清除浏览器缓存，重启 HA。**
@@ -51,9 +51,12 @@
 **1. 打开地图空白或报错Failed to load resource: net::ERR_CONNECTION_REFUSED**   
 请检查config.js配置中HA的路径(即HomeAssistantWebAPIUrl项)是否正确，建议使用相对路径"./../../.."。   
    
-**2. 地图中不显示设备信息**   
+**2. 地图中不显示设备**   
 请检查config.js配置中HA的访问密码(即HomeAssistantWebAPIPassword项)是否正确。   
 可通过访问HA提供的API地址`https://HA的地址:8123/api/states/device_tracker.设备的ID?api_password=HA的访问密码`，来查看是否可以通过HA获取到设备信息。
+
+**3. 地图和设备可以加载，但无设备状态和交通轨迹**
+出现此问题一般是由于高德 API 申请时选错『服务平台』导致，注意请选择『web 端』，而不是 『web 服务』。
 
 ## 版本更新日志
 ### 0.0.2
