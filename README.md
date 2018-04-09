@@ -24,6 +24,7 @@
 ## 配置方法
 1. 拷贝 `www` 和 `panels` 文件夹至 Home Assistant 配置文件夹；
 2. 打开 Home Assistant 配置文件 `configuration.yaml`，添加 `sample.yaml` 中的内容；
+3. 修改 `configuration.yaml` 中的默认经纬度为谷歌地球坐标，**注意非地图，是地球**！坐标可至该[网站](`configuration.yaml`)获取；
 3. 前往 [高德开放平台](http://lbs.amap.com/) 申请开发者身份，创建新应用，**服务类型选择 web 端，注意是 web 端，不是 web 服务！！！** 之后获取 key；
 ![Gaode](https://raw.githubusercontent.com/cxlwill/ha-inkwavemap/master/media/gaode.jpg)
 4. 打开 `www/custom_ui/inkwavemap` 中 `config.js` 文件，填入你的 HA 密码以及高德 token。
