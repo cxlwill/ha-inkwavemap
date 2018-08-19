@@ -11,8 +11,33 @@ Map.prototype = {
         return this.maps[this.currentMapIndex];
     },
     
-    init: function(coordinate) {
-        this.getMap().init(coordinate);
+    init: function(coordinate,zone) {
+        this.getMap().init(coordinate,zone);
+    },
+	
+	//mengqi
+	query: function(coordinate,flag) {
+		if (flag && coordinate.length > 0)
+		{
+			this.getMap().query(coordinate);
+		}
+		this.getMap().trackplayback(flag);
+    },
+	
+	DrawStart: function() {
+        this.getMap().DrawStart();
+    },
+	
+	DrawPause: function() {
+        this.getMap().DrawPause();
+    },
+	
+	DrawResume: function() {
+        this.getMap().DrawResume();
+    },
+	
+	DrawStop: function() {
+        this.getMap().DrawStop();
     },
     
     center: function(coordinate) {
@@ -27,8 +52,12 @@ Map.prototype = {
         this.getMap().showdevicemarker(deviceid, flag);
     },
     
-    drawdrivingmarker: function(deviceid, coordinate) {
-        this.getMap().drawdrivingmarker(deviceid, coordinate);
+    drawdrivingmarker: function(deviceid, coordinate, tracktype) {
+        this.getMap().drawdrivingmarker(deviceid, coordinate, tracktype);
+    },
+	
+	drawdrivingmarkerShow: function(flag){
+		this.getMap().drawdrivingmarkerShow(flag);
     },
     
     zoomin: function() {
