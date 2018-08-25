@@ -18,6 +18,7 @@
     
     <script src="config.js?"+Math.random()></script>
     <script src="js/utils.js?"+Math.random()></script>
+	<script src="js/language.js?"+Math.random()></script>
     
     <script src="js/dock.js?"+Math.random()></script>
     <link rel="stylesheet" href='css/dock.css'/>
@@ -26,12 +27,13 @@
     <link rel="stylesheet" href='css/map.css'/>
     <script src="js/coordinateutil.js?"+Math.random()></script>
 
-    <script type="text/javascript">
-        var gaodeMapAPI = "<script src='https://webapi.amap.com/maps?v=1.4.1&key=" + GaodeMapKey + "&plugin=AMap.MarkerClusterer,AMap.Driving'><\/script>";
+	<script type="text/javascript">
+        var gaodeMapAPI = "<script src='https://webapi.amap.com/maps?v=1.4.1&key=" + GaodeMapKey + "&plugin=AMap.MarkerClusterer,AMap.Driving,AMap.Walking,AMap.Riding'><\/script>";
     //    console.info(gaodeMapAPI);
         document.write(gaodeMapAPI);
     </script>
     <script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+	
     
     <script src="js/mapgaode.js?"+Math.random()></script>
     <script src="js/mapbaidu.js?"+Math.random()></script>
@@ -47,9 +49,9 @@
 
     <div id="mapContainer" class="mapContainer">
         <div id="deviceListWin" class="easyui-window" title="Device List" 
-            style="width:300px;height:400px;left:10px;top:10px"
+            style="width:300px;height:530px;left:10px;top:10px;line-height:28px;"
             data-options="iconCls:'icon-man',modal:false,minimizable:false,maximizable:false,closed:true">
-            <table id="deviceListGrid" class="easyui-datagrid" style="width:100%;height:100%"
+            <table id="deviceListGrid" class="easyui-datagrid" style="width:100%;height:70%;"
             data-options="selectOnCheck:false,checkOnSelect:false,rownumbers:false,singleSelect:true">
                 <thead>
                     <tr>
@@ -59,9 +61,23 @@
                         <th data-options="field:'lon',width:30,hidden:true">lon</th>
                         <th data-options="field:'lat',width:30,hidden:true">lat</th>
                         <th data-options="field:'state',width:120">State</th>
+						<th data-options="field:'state_r',width:120,hidden:true">State_r</th>
                     </tr>
                 </thead>
             </table>
+			&nbsp;<a id="btnBackhome" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'"></a>
+			&nbsp;<select id="cbBackhome" class="easyui-combobox" name="cbBackhome" style="width:63;" data-options="valueField:'id', textField:'text',editable:false">
+				</select>
+			<br>
+			&nbsp;<script>document.write(txtQueryTimeFrom[lang]);</script><input class="easyui-datetimebox" id="queryTimeFrom" data-options="required:true,showSeconds:false" value="" style="width:150px"><br>
+			&nbsp;<script>document.write(txtQueryTimeTo[lang]);</script><input class="easyui-datetimebox" id="queryTimeTo" data-options="required:true,showSeconds:false" value="" style="width:150px"><br>
+			
+			&nbsp;<a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'"></a>
+			<br>
+			&nbsp;<a id="btnDrawStart" href="#" class="easyui-linkbutton"></a>
+			&nbsp;<a id="btnDrawPause" href="#" class="easyui-linkbutton"></a>
+			&nbsp;<a id="btnDrawResume" href="#" class="easyui-linkbutton"></a>
+			&nbsp;<a id="btnDrawStop" href="#" class="easyui-linkbutton"></a>
         </div>
     </div>
     <div id="dock">
@@ -72,6 +88,7 @@
         <img id="toolbar_homerange" src="images/toolbar_homerange_disable.png" width="32">
         <img id="toolbar_devicelist" src="images/toolbar_devicelist_disable.png" width="32">
     </div>
+	
 </body>
 
 </html>
