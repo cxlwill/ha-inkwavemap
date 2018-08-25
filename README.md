@@ -7,8 +7,9 @@
 
 本项目为 Home Assistant 的定制化中国地图面板。
 
-制作者：[墨澜](https://github.com/cxlwill)， [Mr.Yin](https://github.com/YinHangCode)
+制作者：[墨澜](https://github.com/cxlwill)， [Mr.Yin](https://github.com/YinHangCode)，[poerts](https://github.com/poerts)
 
+**感谢 poerts 的 PR，本项目已支持最新版 0.76.2 Home Assistant 授权机制。**
 
 ## 简介
 本地化 Home Assistant 的地图面板，实现：
@@ -60,6 +61,10 @@
 出现此问题一般是由于高德 API 申请时选错『服务平台』导致，注意请选择『web 端』，而不是 『web 服务』。
 
 ## 版本更新日志
+### 0.0.3
+1. 增加路径图示；
+2. 支持新版授权机制。
+
 ### 0.0.2
 1.修复设备列表中未勾选的成员依旧在"在家成员列表框"中显示的bug。   
 2.优化代码逻辑，减少设备回家线路轨迹在地图上的刷新次数。   
