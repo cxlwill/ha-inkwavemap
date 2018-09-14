@@ -13,10 +13,37 @@ var newToken = null;
 $(function() {
 //alert(txtDrawStart);
 	storage=window.localStorage;
-	authToken = storage.getItem("authToken"); //旧版模式
-	newTokens = JSON.parse(storage.getItem("tokens"));
-	newToken = !newTokens ? undefined : (newTokens.token_type + " " + newTokens.access_token); //新版模式
+	try{
+		authToken = storage.getItem("authToken"); //旧版模式
+		newTokens = JSON.parse(storage.getItem("tokens")); //新版HA:0.76~0.77.1
+	}
+	catch(ex){
+		null;
+	}
+
+	if (LongTimeToken != "")  //config.js配置的长期有效token
+	{
+		newToken = LongTimeToken;
+	}
+	else
+	{
+		if (newTokens == null)
+		{
+			newTokens = JSON.parse(storage.getItem("hassTokens")); //新版0.77.2
+		}
+		if (newTokens != null)
+		{
+			newToken = newTokens.token_type + " " + newTokens.access_token; //新版模式
+		}
+	}
 	
+
+	if (authToken == null && newToken == null)
+	{
+		alert("获取授权token失败");
+		alert("如果HomeAssistant版本是0.77.2版本以上，登录HomeAssistant后保存密码（或者在config.js中配置LongTimeToken），再刷新此页面");
+		return;
+	}
 	
 	getDataMode = "client";  //不再使用server模式，client模式安全性没问题
 
@@ -464,7 +491,7 @@ $(document).on("mapInitFinished", function() {
             for(var index in data.attributes.entity_id) {
                 var deviceFulId = data.attributes.entity_id[index];
                 var deviceId = deviceFulId.replace("device_tracker.", "");
-				if (idlist!="" && idlist+",".indexOf(deviceId) == -1){
+				if (idlist!="" && (idlist+",").indexOf(deviceId) == -1){
 					continue;
 				} 
                 insertDeviceList(0, {
