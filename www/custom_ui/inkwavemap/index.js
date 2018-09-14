@@ -15,7 +15,7 @@ $(function() {
 	storage=window.localStorage;
 	authToken = storage.getItem("authToken"); //旧版模式
 	newTokens = JSON.parse(storage.getItem("tokens"));
-	newToken = newTokens.token_type + " " + newTokens.access_token; //新版模式
+	newToken = !newTokens ? undefined : (newTokens.token_type + " " + newTokens.access_token); //新版模式
 	
 	
 	getDataMode = "client";  //不再使用server模式，client模式安全性没问题
