@@ -9,7 +9,7 @@
 
 制作者：[墨澜](https://github.com/cxlwill)， [Mr.Yin](https://github.com/YinHangCode)，[poerts](https://github.com/poerts)
 
-**感谢 poerts 的 PR，本项目已支持最新版 0.76.2 Home Assistant 授权机制。**
+**感谢 poerts 的 PR，本项目已支持最新版 0.77.2 Home Assistant 授权机制。**
 
 ## 简介
 本地化 Home Assistant 的地图面板，实现：
